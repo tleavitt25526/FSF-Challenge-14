@@ -60,6 +60,9 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    // POSSIBLE ISSUE #3 - wont send posts data
+    console.log(user);
+
     res.render('profile', {
       ...user,
       logged_in: true
